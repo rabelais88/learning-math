@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{kotex}
+\usepackage{color}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\begin{document}
+
+{\color{red}fire}
+
+\section {용어}
+\begin {itemize}
+\item ?mial: ?항식
+\begin {tabular} {| l | l | l | l |}
+\hline
+monomial & 1항식 & $a$\\
+\hline
+binomial & 2항식 & $a+b$\\
+\hline
+trinomial & 3항식 & $a+b+c$\\
+\hline
+polynomial & 다항식 & $a+...$\\
+\hline
+\end {tabular}
+
+\item binomial theorem - 2항식의 법칙 -
+$$(a+b)^{n}= \sum_{k=0}^{n} \begin{pmatrix}n \\ k \end{pmatrix} a^{n-k}b^{k}$$
+$$\begin{pmatrix} n \\k \end{pmatrix}=\dfrac{n!}{k!(n-k)!} $$
+\end {itemize}
+
+\section {기호 및 등식}
+\begin {itemize}
+\item $!a$ = factorial. 계승. $a$부터 $1$까지 1씩 감소하여 곱하기를 나타냄.(작거나 같은 모든 양의 정수의 곱)
+\item $\begin{pmatrix} a \\ b \end{pmatrix}$ = combinatorics. 표현할 때에는 `a choose b` 형식으로 표현함. 풀이법은 아래와 같음.
+$$\begin{pmatrix} a\\b \end{pmatrix} = \dfrac{a!}{b!(a-b)!}$$
+\item $\Sigma$ = Sum. 혹은 시그마. $a$가 아래첨자 $k$부터 위첨자$n$까지 증가하며 매 증가마다 그 옆에 들어가있는 수식을 계산하고 합산함.
+$$ \sum_{a=k}^{n} (a+b) $$
+\end {itemize}
+
+
+
+\section {기초}
+
+\subsection {long division of polynomials 다항식의 나눗셈(전통적인 방법)}
+나누고자 하는 대상 다항식의 가장 차수(degree)가 높은 부분부터 나눗셈한다.
+$frac{x+1}{x^{2}+3x+6}$을 나누고자 할 경우
+\begin {enumerate}
+\item $x^{2}$가 가장 높은 차수이므로 $(x+1)x = x^{2}+x$로 가장 먼저 나눈다.
+\item $(x^{2}+3x+6)-(x^{2}+x)=2x+6$이 된다.
+\item 다음 가장 높은 차수는 $x^{1}$이므로 $(x+1)2 = 2x+2$로 나눈다.
+\item $(2x+6)-(2x+2) = 4$이므로 몫은 $x+2$이고, 나머지는 $4$이다.
+\end {enumerate}
+
+\subsection {synthetic division of polynomials 다항식의 알고리즘적 나눗셈}
+방법이 조금 복잡하므로 차라리 유튜브 영상을 볼것
+\vspace{12pt}\\
+\url{https://www.khanacademy.org/math/algebra2/arithmetic-with-polynomials/modal/v/synthetic-division}
+\vspace{12pt}\\
+\url{https://www.khanacademy.org/math/algebra2/arithmetic-with-polynomials/modal/v/synthetic-division-example-2}\\
+Salman Khan도 그다지 즐겨쓰는 방법은 아니라고 했으니 크게 신경쓰지 않아도 될듯. $x+-a$형태의 
+\end{document}
