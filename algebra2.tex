@@ -1,20 +1,20 @@
 \documentclass{article}
-\usepackage{kotex}
+\usepackage{kotex} % for korean support
 \usepackage{color}
-\usepackage{mathtools}
-\usepackage{hyperref}
-\usepackage[margin=0.5in]{geometry}
-\usepackage{polynom}
+\usepackage{mathtools} % for pmatrix command - 행렬 표시
+\usepackage{hyperref} % for hyperlink
+\usepackage[margin=0.5in]{geometry} % for document margin
+\usepackage{polynom} % automatic polynomial calculations(divisions, more specifically)
 \title{Algebra II \\대수학2}
 \author{박성렬}
 
 \begin{document}
 \maketitle
 
-\section {용어}
-\begin {itemize}
-\item ?mial: ?항식
-\begin {tabular} {| l | l | l | l |}
+\section{용어}
+\begin{itemize}
+\item \textbf{?mial/?항식}\\
+\begin{tabular} {| l | l | l | l |}
 \hline
 monomial & 1항식 & $a$\\
 \hline
@@ -24,38 +24,86 @@ trinomial & 3항식 & $a+b+c$\\
 \hline
 polynomial & 다항식 & $a+...$\\
 \hline
-\end {tabular}
+\end{tabular}
 
-\item binomial theorem - 2항식의 법칙 -
+\item \textbf{binomial theorem/2항식의 법칙}
 $$(a+b)^{n}= \sum_{k=0}^{n} \begin{pmatrix}n \\ k \end{pmatrix} a^{n-k}b^{k}$$
 $$\begin{pmatrix} n \\k \end{pmatrix}=\dfrac{n!}{k!(n-k)!} $$
-\end {itemize}
+\item \textbf{imaginary number/허수}:
+직선으로 된 좌표계에 나타낼 수 없는 수치(복소수 $z$에 대하여 $z=Im(x)$로 나타내기도 함. $i=\sqrt{-1}$
 
-\section {기호 및 등식}
-\begin {itemize}
-\item $!a$ = factorial. 계승. $a$부터 $1$까지 1씩 감소하여 곱하기를 나타냄.(작거나 같은 모든 양의 정수의 곱)
+\item \textbf{real number/실수}:
+직선으로 된 좌표계에 표시 가능한 수치(복소수 $z$에 대하여 $z=Re(x)$로 나타내기도 한다)
+
+\item \textbf{complex number/복소수}:
+허수와 실수의 합. 주의할 점은 실수와 허수는 곱하기는 가능하지만 더하기가 불가능하다는 점. 따라서 $i3$와 같은 수는 pure imaginary number이고, 일반적으로 복소수라 함은 $3+i4$ 형식이다. 자세한 내용은 복소수의 정의 참조.
+
+\item \textbf{irrational number/무리수}:
+유리수가 아닌 실수. $\sqrt{2}$같은 수로써, 좌표계에 나타낼 수는 있지만, 유리수는 아니다.
+
+\item \textbf{rational number/유리수}:
+두 정수의 몫으로 나타낼 수 있는 수(fraction을 포함한 수)
+
+\item \textbf{integer/정수}:
+분모가 1인 자연수. 음의 정수와 양의 정수를 포함한다.
+
+\item \textbf{natural number/자연수}:
+오로지 양의 정수만 포함하고 있는 '숫자 세기'가 가능한 수.
+\end{itemize}
+
+\section{기호 및 등식}
+\begin{itemize}
+\item $!a$ = \textbf{factorial/계승} $a$부터 $1$까지 1씩 감소하여 곱하기를 나타냄.(작거나 같은 모든 양의 정수의 곱)
 \item $\begin{pmatrix} a \\ b \end{pmatrix}$ = combinatorics. 표현할 때에는 `a choose b` 형식으로 표현함. 풀이법은 아래와 같음.
 $$\begin{pmatrix} a\\b \end{pmatrix} = \dfrac{a!}{b!(a-b)!}$$
-\item $\Sigma$ = Sum. 혹은 시그마. $a$가 아래첨자 $k$부터 위첨자$n$까지 증가하며 매 증가마다 그 옆에 들어가있는 수식을 계산하고 합산함.
+\item $\Sigma$ = \textbf{Sum 혹은 시그마} $a$가 아래첨자 $k$부터 위첨자$n$까지 증가하며 매 증가마다 그 옆에 들어가있는 수식을 계산하고 합산함.
 $$ \sum_{a=k}^{n} (a+b) $$
-\end {itemize}
+\end{itemize}
 
 
 
-\section {기초}
+\section{기초}
+\subsection{허수의 정의/Definition of Imaginary Number}
+허수를 $i$라고 했을 때, 다음과 같은 규칙이 성립한다.
+$$i^{2}=-1$$
+$$i=\sqrt{-1}$$
+그러나 허수도 일반적인 실수와 별반 다르지 않은 속성 또한 있다.
+$$i^{0}=1, i^{1}=1$$
+이를 허수의 본래 성질과 연관시켜 계산해보면...
+$$i^{3}=i^{1}\cdot i^{2}=-1\cdot i$$
 
-\subsection {long division of polynomials 다항식의 나눗셈(전통적인 방법)}
+$$ \begin{tabular}{| l | l | l | l |}
+\hline
+$i^{1}$ & $i^{2}$ & $i^{3}$ & $i^{4}$ \\
+\hline
+i & -1 & -i & 1 \\
+\hline
+\end{tabular}
+$$
+이러한 표를 만들 수 있다. 따라서 이러한 표의 내용이 순환된다고 볼 수 있는데, 4제곱마다 1로 돌아오므로 일단 허수의 제곱을 계산하고자 할 때에는 일단 승을 4로 나눈 뒤에 그 나머지를 1~4 사이에서 찾아 계산하면 된다.\\
+또한 $i^{4}\cdot i^{-1}=i^{3}$이므로 여기서 추측하여 $i^{-1}=-i$로 거꾸로 된 순서도 유도가 가능하다.
+\subsection{복소수의 정의/Definition of Complex Number}
+허수와 실수는 곱할 수 있다. 그래서 $i3, i\cdot \sqrt{2}$등의 값을 순수한 허수(pure imaginary number)라고 한다. 하지만 빼고 더할 수는 없다. 그래서 $3+2i$같은 값은 순수한 허수가 아니다. 대신 새로운 체계를 만들어서 이를 표시하는데, 허수와 실수가 더해진 값을 복소수라고 한다.
+$$a,b{\textsf{를 자연수(실수/real number)라고 할 때,}}$$
+$$a\cdot i = {\textsf{pure imaginary number}}$$
+$$a+b\cdot i = {\textsf{not a pure imaginary number, complex number}}$$
+복소수 또는 허수는 실제로 계산할 수 없는 값이므로, 실수로 된 좌표계에 나타낼 수 없다. 다만 허수와 실수의 좌표계를 함께 가진 복합 좌표계(예를 들면 실수를 가로축으로 놓고, 허수를 세로축으로 놓는 등의)위에는 표현이 가능하다. 앞에서 배운 표기법을 활용하면 아래와 같이 표기 가능하다.
+$$z=3+2i = Re(3), Im(2)$$
+따라서 가로축을 실수로 잡고 세로축을 허수로 잡은 좌표계 위에서 (3,2)의 좌표를 가진다. \\ 더하기는 안되지만 곱하기는 가능하기 때문에, 수의 분배도 역시 정상적으로 이루어짐에 주의하자.
+$$-4(13+5i)=-4(13)+(-4)(5i)=-52-20i$$
+
+\subsection{Long Division of Polynomials 다항식의 나눗셈(전통적인 방법)}
 나누고자 하는 대상 다항식의 가장 차수(degree)가 높은 부분부터 나눗셈한다.
 \subsubsection{예제1}
 $$\frac{x^{2}+3x+6}{x+1}$$
 $$\Downarrow$$
 $$\polylongdiv{x^{2}+3x+6}{x+1}$$
-\begin {enumerate}
+\begin{enumerate}
 \item $x^{2}$가 가장 높은 차수이므로 x를 곱하여 차수를 맞추어주고 $(x+1)x = x^{2}+x$로 가장 먼저 나눈다: 몫에 x가 더해진다.
 \item $(x^{2}+3x+6)-(x^{2}+x)=2x+6$이 된다.
 \item 다음 가장 높은 차수는 $x^{1}$이므로 2를 곱하여 $(x+1)2 = 2x+2$로 나눈다: 몫에 2가 더해진다.
 \item $(2x+6)-(2x+2) = 4$이므로 몫은 $x+2$이고, 나머지는 $4$이다.
-\end {enumerate}
+\end{enumerate}
 \begin{quote}
 주의점: 예제는 덧셈이지만 가장 차수가 높은 항에서만 어긋나지 않는다면 뺄셈도 가능하다. 다음의 예제를 참조하자
 \end{quote}
@@ -75,7 +123,7 @@ $$\polylongdiv{x^{2}+x+1}{x+2}$$
 {\color{red} 주의점}: 당연한 얘기지만, 각종 차수와 정수부, 미지수를 표기하다보면 사람이라 실수가 생길수밖에 없다. 항상 문제를 풀기 전에 옮겨 적은 문제에 오기는 없는지 꼭 두번 이상 확인해야된다. 지금이야 별 문제 없지만, 나중에 실전에서 수학으로 문제 해결시 정확도가 매우 중요해질 것을 생각하면, 지금부터 버릇을 들여야 할 것 같다.
 \end{quote}
 
-\subsection {synthetic division of polynomials 다항식의 알고리즘적 나눗셈}
+\subsection{synthetic division of polynomials 다항식의 알고리즘적 나눗셈}
 방법이 조금 복잡하므로 차라리 유튜브 영상을 볼것
 \vspace{12pt}\\
 \url{https://www.khanacademy.org/math/algebra2/arithmetic-with-polynomials/modal/v/synthetic-division}
