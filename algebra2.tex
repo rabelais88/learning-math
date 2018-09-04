@@ -48,6 +48,7 @@ $$ \sum_{a=k}^{n} (a+b) $$
 나누고자 하는 대상 다항식의 가장 차수(degree)가 높은 부분부터 나눗셈한다.
 \subsubsection{예제1}
 $$\frac{x^{2}+3x+6}{x+1}$$
+$$\Downarrow$$
 $$\polylongdiv{x^{2}+3x+6}{x+1}$$
 \begin {enumerate}
 \item $x^{2}$가 가장 높은 차수이므로 x를 곱하여 차수를 맞추어주고 $(x+1)x = x^{2}+x$로 가장 먼저 나눈다: 몫에 x가 더해진다.
@@ -61,11 +62,12 @@ $$\polylongdiv{x^{2}+3x+6}{x+1}$$
 
 \subsubsection{예제2(음수가 있을 때)}
 $$\frac{x^{2}+x+1}{x+2}$$
+$$\Downarrow$$
 $$\polylongdiv{x^{2}+x+1}{x+2}$$
 \begin{enumerate}
 \item $x^{2}$가 가장 높은 차수이므로 $x$를 곱하여 차수를 맞춰준다. $(x+2)x=x^{2}+2x$
 \item $(x^{2}+x+1)-(x^{2}+2x)=-x+1$이 된다: 몫에 $x$가 더해진다.
-\item 음수(-)가 나왔지만 당황하지 말고 마이너스로 곱한다. 이미 실수부에는 문제가 없으므로 음수로 된 정수만 곱해주자. $-1(x+2)=-x-2$가 된다: 몫에 $-1$이 더해진다.
+\item 음수(-)가 나왔지만 당황하지 말고 마이너스로 곱한다. 정수부에는 문제가 없으므로 음수로 된 정수만 곱해주자. $-1(x+2)=-x-2$가 된다: 몫에 $-1$이 더해진다.
 \item 앞에 남아있던 수($-x+1$)에서 빼주면 된다.\textbf{왜냐면 나눗셈은 기본적으로 마이너스 계산이기 때문이다.} $(-x+1)-(-x-2)=3$이므로 몫은 $x-1$이고 나머지는 $3$이다.
 \end{enumerate}
 \begin{quote}
@@ -79,12 +81,12 @@ $$\polylongdiv{x^{2}+x+1}{x+2}$$
 \url{https://www.khanacademy.org/math/algebra2/arithmetic-with-polynomials/modal/v/synthetic-division}
 \vspace{12pt}\\
 \url{https://www.khanacademy.org/math/algebra2/arithmetic-with-polynomials/modal/v/synthetic-division-example-2}\\
-Salman Khan도 그다지 즐겨쓰는 방법은 아니라고 했으니 크게 신경쓰지 않아도 될듯. $x+-a$형태의 
+Salman Khan도 그다지 즐겨쓰는 방법은 아니라고 했으니 크게 신경쓰지 않아도 될듯. 어차피 $x\pm a$형태의 이항식으로 나눌 때에만 사용 가능하다고 하니 정 필요할 때에만 사용하자.
 
 \subsection{Polynomial Remainder Theorem}
 $$\frac{f(x)}{x-a}={\textsf{remainder of}} f(a)$$
 단순히 표현식만으로는 이해가 잘 안될수도 있는데 예를 들어 $f(x) = 3x^{2}-4x+7$이라고 한다면, 이를 $x-1$로 나눌 경우 그 나머지는 $f(1)$과 같다는 뜻이다.
 $$\polylongdiv{3x^{2}-4x+7}{x-1}$$
-위의 결과를 차용하면, 결국 $\frac{f(x)}{x-1}=...6$이므로 $6=f(1)$인 것이다. \textbf{즉 다항식 나눗셈의 나머지로 다항식의 값을 알아낼 수 있다는 것이다!} 혹은 그 반대로 값을 대입하기만 해도 다항식의 나머지를 알아낼 수 있다.(물론 몫은 알 수 없다)
+위의 결과를 차용하면, 결국 $\frac{f(x)}{x-1}=...6$이므로 $6=f(1)$인 것이다. \textbf{즉 다항식 나눗셈의 나머지로 다항식의 값을 알아낼 수 있다는 것이다!} 혹은 그 반대로 값을 대입하기만 해도 다항식의 나머지를 알아낼 수 있다.(물론 몫은 알 수 없다) 그리고 나머지를 알 수 있기 때문에, $f(x)$를 가지고 특정한 이항식$(x-a)$이 적정한 해(factor)인지 아닌지를 알 수 있다. 대입 후 0이 나오면(나머지가 없으면) 적정한 해가 맞는 것이고, 나머지가 있으면 해가 아니다.
 
 \end{document}
