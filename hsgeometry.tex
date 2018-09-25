@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{kotex} % for korean support
+\usepackage{color}
+\usepackage{mathtools} % for pmatrix command - 행렬 표시
+\usepackage{hyperref} % for hyperlink
+\usepackage[margin=0.5in]{geometry} % for document margin
+\usepackage{polynom} % automatic polynomial calculations(divisions, more specifically)
+\usepackage{tikz}
+\title{Highschool Geometry 고등수학 도형}
+\author{박성렬}
+
+\begin{document}
+\maketitle
+\section{기본개념}
+\subsection{회전 Rotation}
+도형의 회전을 알아보고자 할 때에는, 도형의 회전이 일어났다고 예상되는 지점에 점을 먼저 찍어야 한다. 회전이 이루어난 점을 기준으로 기존의 점 A와 새로운 점 'A를 찍어서 연결하면 회전이 일어난 각이 나온다.\\
+$$
+\begin{tikzpicture}
+
+\draw (1,3) -- (-1,1.5) -- (2,1.5);
+\node at (1,3.5) {\\A};
+\node at (-1,1.5) {};
+\node at (2.5,1.5) {\\`A};
+\draw (-0.234,2.1428) arc (40.0022:0:1);
+\end{tikzpicture}
+$$
+회전을 수로 나타날 때 직관과는 반대로 양수가 시계 반대방향이고 음수가 시계 방향이므로 유의하자.
+
+\end{document}
