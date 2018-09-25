@@ -7,11 +7,15 @@
 \usepackage{polynom} % automatic polynomial calculations(divisions, more specifically)
 \usepackage{tikz}
 \usepackage{siunitx} % package for angle(degree) character display
+\usepackage{graphicx} % package for tikz figure caption
+\usepackage{caption} % tikz figure caption
+
 \title{Highschool Geometry 고등수학 도형}
 \author{박성렬}
 
 \begin{document}
 \maketitle
+\captionsetup[figure]{labelfont={bf},labelformat={default},labelsep=period,name={Fig.}}
 \section{기본개념}
 \subsection{회전 Rotation}
 도형의 회전을 알아보고자 할 때에는, 도형의 회전이 일어났다고 예상되는 지점에 점을 먼저 찍어야 한다. 회전이 이루어난 점을 기준으로 기존의 점 A와 새로운 점 'A를 찍어서 연결하면 회전이 일어난 각이 나온다.\\
@@ -29,7 +33,7 @@ $$
 회전을 수로 나타날 때 직관과는 반대로 양수가 시계 반대방향이고 음수가 시계 방향이므로 유의하자.\\
 시계 반대 방향으로 90도 회전($\ang{+90}$)은 다음과 같이 나타낼 수 있다:  $(x, y) ->(-y,x)$ 따라서 어떤 각이 주어지면 그것을 90도로 나눌 수 있을 경우 90도 회전을 필요한 만큼 반복하면 된다.
 한편 시계 방향으로 90도 회전($\ang{-90}$)할 때에는 또 다르므로 유의하자. $(x, y) -> (y,-x)$\\
-
+$$
 \begin{tabular} {| l | l |}
 \hline
 이동한 각도 & 원래 형태 $(x,y)$ 에서 변한 형태\\
@@ -41,5 +45,40 @@ $$
 \ang{+180} & $(-x,-y)$\\
 \hline
 \end{tabular}
+$$
+도표를 참조하면 좀더 쉽다. 헷갈릴 때 이 도표를 머릿속에 그려보자.
+$$
+  \begin{tikzpicture}
+	\node (v1) at (-6,0.5) {};
+	\node (v2) at (0,0.5) {};
+	\node (v3) at (-3,2.5) {};
+	\node (v4) at (-3,-2) {};
+	\draw  (v1) edge (v2);
+	\draw  (v3) edge (v4);
+	\node at (-4.5,1.5) {$-y,x$(90 deg)};
+	\node at (-1.5,1.5) {$x,y$};
+	\node at (-4.5,-0.5) {$-x,-y$(180 deg)};
+	\node at (-1.5,-0.5) {$y,-x$(-90 deg)};
+  \end{tikzpicture}
+$$
+\subsection{반사 Reflection}
+도형의 반사는 어렵게 생각할 것 없이 기준선이 있고, 그 기준선과의 길이만 비교하면 된다. 가로축은 유지하되 세로축만 반전시키면 된다. 만약 기준선이 기울어진 상태에서도 마찬가지다.
+$$
+\begin{tikzpicture}
+
+\node (v1) at (-2,-2) {};
+\node (v2) at (1.5,1.5) {};
+\node (v5) at (1,-1) {};
+\node (v4) at (0,0) {};
+\node (v3) at (-1,1) {};
+\draw  (v3) edge (v4);
+\draw  (v5) edge (v4);
+\node at (1.5,-2) {distance = 2 block};
+\draw [dash pattern=on 2pt off 3pt on 4pt off 4pt] (v2) edge (v1);
+\node at (-2,2) {reflected distance = 2 block};
+\end{tikzpicture}
+$$
+\subsection{도형의 축소와 확대 Dilation}
+도형의 축소와 확대는 항상 기준점이 필요하다. 확대/축소 이후의 도형을 구하려면 기준점에서 도형의 각 꼭지점의 가로/세로 거리를 확대 또는 축소하는 비율로 곱하면 된다.
 
 \end{document}
