@@ -6,6 +6,7 @@
 \usepackage[margin=0.5in]{geometry} % for document margin
 \usepackage{polynom} % automatic polynomial calculations(divisions, more specifically)
 \usepackage{tikz}
+\usepackage{siunitx} % package for angle(degree) character display
 \title{Highschool Geometry 고등수학 도형}
 \author{박성렬}
 
@@ -24,6 +25,21 @@ $$
 \draw (-0.234,2.1428) arc (40.0022:0:1);
 \end{tikzpicture}
 $$
-회전을 수로 나타날 때 직관과는 반대로 양수가 시계 반대방향이고 음수가 시계 방향이므로 유의하자.
+\subsubsection{회전의 수학적 정의}
+회전을 수로 나타날 때 직관과는 반대로 양수가 시계 반대방향이고 음수가 시계 방향이므로 유의하자.\\
+시계 반대 방향으로 90도 회전($\ang{+90}$)은 다음과 같이 나타낼 수 있다:  $(x, y) ->(-y,x)$ 따라서 어떤 각이 주어지면 그것을 90도로 나눌 수 있을 경우 90도 회전을 필요한 만큼 반복하면 된다.
+한편 시계 방향으로 90도 회전($\ang{-90}$)할 때에는 또 다르므로 유의하자. $(x, y) -> (y,-x)$\\
+
+\begin{tabular} {| l | l |}
+\hline
+이동한 각도 & 원래 형태 $(x,y)$ 에서 변한 형태\\
+\hline
+\ang{+90} & $(-y,x)$\\
+\hline
+\ang{-90} & $(y,-x)$\\
+\hline
+\ang{+180} & $(-x,-y)$\\
+\hline
+\end{tabular}
 
 \end{document}
