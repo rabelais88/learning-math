@@ -8,7 +8,9 @@
 \usepackage{tikz}
 \usepackage{siunitx} % package for angle(degree) character display
 \usepackage{graphicx} % package for tikz figure caption
-\usepackage{caption} % tikz figure caption
+\usepackage{caption} % tikz figure caption\
+
+% 주의점: $로 감싸야만 사용 가능한 수식이 있고, 감싸지 않아도 사용 가능한 수식이 있으니 주의하자
 
 \title{Highschool Geometry 고등수학 도형}
 \author{박성렬}
@@ -138,5 +140,38 @@ $$
   \item{perpendicular - 직각}
   \item{round - \underline{반}올림 - 반이라는 개념보다 다른 수에 가까운 수로 올림이라고 기억하면 편함. 5는 0에 가깝고, 6은 10에 가깝다!}
 \end{itemize}
+\subsection{special right triangles 유용한 정삼각형들}
+\subsubsection{\ang{45}-\ang{45}-\ang{90} 삼각형}
+제일 평범한 유형의 정삼각형. 빗변을 제외한 양 변의 길이가 같으므로 빗변만 알아도 양 변의 길이를 알 수 있다. 빗변의 길이로 양변의 길이 구하기, 또는 양변의 길이로 빗변을 구하는 식의 유도 과정은 아래와 같다.\\
+*c는 빗변(hypoteneuse)이고, a와 b가 나머지 변이다. 여기서 a와 b는 길이가 동일하므로 바꿔 읽어도 된다.
+$$a^{2}+b^{2}=c^{2}$$
+$$b^{2}+b^{2}=c^{2}$$
+$$2b^{2}=c^{2}$$
+$$b^{2}=\frac{c^{2}}{2}$$
+$$b=\sqrt{\frac{c^{2}}{2}}=\frac{c}{\sqrt{2}}$$
+\subsubsection{\ang{30}-\ang{60}-\ang{90} 삼각형}
+이것도 마찬가지로 한 변의 길이만 알아도 나머지를 추적할 수 있다. \ang{60}-\ang{90}의 각도를 가진 변은 빗변h의 $\frac{1}{2}$이다.
+$$
+\begin{tikzpicture}
+
+\draw (2,3) node (v1) {} -- (0,-1.5) -- (2,-1.5) -- (v1);
+\draw (0.5,-1.5) arc (0:40:1);
+
+
+\draw (2,2.5) arc (-89.999:-120:0.5);
+\draw  (2,-1) rectangle (1.5,-1.5);
+\node at (-0.5,-1) {60};
+\node at (1.5,3.5) {30};
+\node at (0,1) {hypoteneuse};
+\node at (1,-2.5) {1/2h};
+\end{tikzpicture}
+$$
+이 $h\frac{1}{2}$변을 기준으로 알려지지 않은 변 x의 길이를 구하는 수식은 아래와 같이 유도한다.
+$${\frac{1}{2}h}^{2}+x^{2}=h^{2}$$
+$$\frac{h^{2}}{4}+x^{2}=h^{2}$$
+$$x^{2}=h^{2}(1-\frac{1}{4})$$
+$$x^{2}={\frac{3}{4}h}^{2}$$
+$$x={\frac{\sqrt{3}}{2}}{\cdot}h$$
+\subsection{trigonometry 삼각법}
 
 \end{document}
