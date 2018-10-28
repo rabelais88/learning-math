@@ -9,6 +9,8 @@
 \usepackage{siunitx} % package for angle(degree) character display
 \usepackage{graphicx} % package for tikz figure caption
 \usepackage{caption} % tikz figure caption\
+\usepackage{graphicx} % for image files
+\graphicspath{ {./images/} } % for image files
 
 % 주의점: $로 감싸야만 사용 가능한 수식이 있고, 감싸지 않아도 사용 가능한 수식이 있으니 주의하자
 
@@ -172,6 +174,13 @@ $$\frac{h^{2}}{4}+x^{2}=h^{2}$$
 $$x^{2}=h^{2}(1-\frac{1}{4})$$
 $$x^{2}={\frac{3}{4}h}^{2}$$
 $$x={\frac{\sqrt{3}}{2}}{\cdot}h$$
-\subsection{trigonometry 삼각법}
+\subsection{basics of trigonometry - trigonometric ratios 삼각법 기본 - 삼각률}
+삼각법은 정삼각형을 기준으로 사용하며, 하나의 각을 대상으로 한다.
+$$\includegraphics[scale=0.8]{trigonometry.jpg}$$
+$\theta$를 기준 각으로 봤을 때, $\sin \cos \tan$은 해당 각의 상대적 위치를 가지고 다른 변 길이들의 비율을 알려준다. 비율의 내용을 빨리 외우기 위해 soh, cah, toa로 외운다. 이는 아래의 내용을 나타낸다\\
+$${\sin\theta}\textsf{(S.O.H)}=\frac{\textsf{Opposite (side)of $\theta$}}{\textsf{Hypoteneuse of $\theta$}}$$
+$${\cos\theta}\textsf{(C.A.H)}=\frac{\textsf{Adjecent of $\theta$}}{\textsf{Hypoteneuse of $\theta$}}$$
+$${\tan\theta}\textsf{(T.O.A)}=\frac{\textsf{Opposite of $\theta$}}{\textsf{Adjecent of $\theta$}}$$
+위의 그림으로 예를 들자면 $\sin$은 $\theta$로부터 반대편의 변 길이인 3을 빗변의 길이 5로 나눈 $\frac{3}{5}$가 된다.
 
 \end{document}
